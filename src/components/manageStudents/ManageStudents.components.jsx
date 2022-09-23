@@ -16,6 +16,10 @@ const ManageStudents = ({ setStudents, students }) => {
       });
     });
   };
+  const popHandler=()=>{
+    setPopup(false);
+
+  }
   const viewHandler = (id) => {
     setView(!view)
   };
@@ -78,7 +82,7 @@ const ManageStudents = ({ setStudents, students }) => {
           <h1>Are you sure you want to delete this Entry?</h1>
           <div className="button-container">
             <button
-              onClick={viewHandler}
+              onClick={popHandler}
               className="btn btn-primary"
             >
               NO
