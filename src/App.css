@@ -1,0 +1,23 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+html{
+  font-size: 62.5%;
+  background-color: #efefef;
+}
+li{
+  list-style: none;
+}
+.App{
+  margin: 5rem 1rem 0rem 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
+.right-container{
+  flex: 80%;
+  
+  
+}

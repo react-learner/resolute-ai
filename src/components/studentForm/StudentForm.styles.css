@@ -1,0 +1,41 @@
+.form-container {
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.class-details{
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+.personal-details{
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+}
+input, select, textarea{
+    padding: 1.5rem 0.7rem;
+    background-color: transparent;
+    border-radius: 8px;
+}
+textarea{
+    resize: none;
+}
+.btn{
+    padding: 1.5rem 0.7rem;
+    color: white;
+    border: none;
+    /* border-radius: 8px; */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    box-shadow: 0 0 0 0 ;
+    background-color: #ff6f00;
+}
+.btn:hover{
+    background-color: #FB7813;
+    box-shadow: 13px 13px 0px -7px rgba(0,0,0,0.75);
+}
