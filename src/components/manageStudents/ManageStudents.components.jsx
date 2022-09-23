@@ -8,7 +8,6 @@ const ManageStudents = ({ setStudents, students }) => {
   const [popup, setPopup] = useState(false);
   const [indexs, setIndex] = useState(0);
   const [view, setView] = useState(false);
-  console.log(students);
   const removeHandler = (id) => {
     setPopup(false);
     setStudents((oldData) => {
@@ -18,10 +17,7 @@ const ManageStudents = ({ setStudents, students }) => {
     });
   };
   const viewHandler = (id) => {
-    students.map((student, index) => {
-      index === id;
-      return setIndex(!view);
-    });
+    setView(!view)
   };
 
   return (
@@ -82,7 +78,7 @@ const ManageStudents = ({ setStudents, students }) => {
           <h1>Are you sure you want to delete this Entry?</h1>
           <div className="button-container">
             <button
-              onClick={() => viewHandler(index)}
+              onClick={viewHandler}
               className="btn btn-primary"
             >
               NO

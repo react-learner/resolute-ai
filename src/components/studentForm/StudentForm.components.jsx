@@ -1,7 +1,8 @@
 import React from "react";
 import "./StudentForm.styles.css";
 
-const StudentForm = ({ setStudentDetails, studentDetails, setStudents }) => {
+const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialState}) => {
+ 
   const formHandler = (e) => {
     const { name, value } = e.target;
     setStudentDetails({ ...studentDetails, [name]: value });
@@ -22,7 +23,13 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents }) => {
     pincode,
   } = studentDetails;
   const submitHandler = () => {
-    setStudents((value) => [...value, studentDetails]);
+    if(JSON.stringify(studentDetails) === JSON.stringify(initialState) )
+    return alert('Please enter student details')
+    else{
+      setStudents((value) => [...value, studentDetails]);
+    setStudentDetails(initialState)
+    alert('Student details recorded')
+    }
   };
   
   return (
@@ -125,6 +132,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents }) => {
           placeholder="Pincode"
           name="pincode"
           value={pincode}
+          maxLength='6'
         />
         <button onClick={submitHandler} className="btn">
           Add Student

@@ -11,8 +11,8 @@ function App() {
     firstName: "",
     middleName: "",
     lastName: "",
-    selectClass: "",
-    division: "",
+    selectClass: "1",
+    division: "A",
     rollNo: "",
     addressLine1: "",
     addressLine2: "",
@@ -35,6 +35,7 @@ function App() {
             path="/"
             element={
               <StudentForm
+              initialState={initialState}
                 setStudentDetails={setStudentDetails}
                 studentDetails={studentDetails}
                 setStudents={setStudents}

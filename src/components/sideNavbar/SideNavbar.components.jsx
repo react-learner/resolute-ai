@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import "./SideNavbar.styles.css";
 
 const SideNavbar = () => {
-  const linkStyle = { textDecoration: "none" };
+  const linkStyle = { textDecoration: "none", color: "#000" };
   return (
     <div className="nav-container">
-      <h1 className="nav-logo">LOGO</h1>
+      <Link style={linkStyle} to="/">
+        <h1 className="nav-logo">LOGO</h1>
+      </Link>
       <ul className="nav-items">
         <Link style={linkStyle} to="/">
           <li className="nav-link">
