@@ -20,6 +20,7 @@ input, select, textarea{
     padding: 1.5rem 0.7rem;
     background-color: transparent;
     border-radius: 8px;
+    border: 1px solid #bbb;
 }
 textarea{
     resize: none;
