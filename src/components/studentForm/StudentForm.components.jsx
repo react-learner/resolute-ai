@@ -1,8 +1,12 @@
 import React from "react";
 import "./StudentForm.styles.css";
 
-const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialState}) => {
- 
+const StudentForm = ({
+  setStudentDetails,
+  studentDetails,
+  setStudents,
+  initialState,
+}) => {
   const formHandler = (e) => {
     const { name, value } = e.target;
     setStudentDetails({ ...studentDetails, [name]: value });
@@ -23,20 +27,21 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
     pincode,
   } = studentDetails;
   const submitHandler = () => {
-    if(JSON.stringify(studentDetails) === JSON.stringify(initialState) )
-    return alert('Please enter student details')
-    else{
+    if (JSON.stringify(studentDetails) === JSON.stringify(initialState))
+      return alert("Please enter student details");
+    else {
       setStudents((value) => [...value, studentDetails]);
-    setStudentDetails(initialState)
-    alert('Student details recorded')
+      setStudentDetails(initialState);
+      alert("Student details recorded");
     }
   };
-  
+
   return (
     <div className="form-container">
       <div className="class-details">
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="First Name"
           name="firstName"
@@ -44,6 +49,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
         />
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="Middle Name"
           name="middleName"
@@ -51,6 +57,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
         />
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="Last Name"
           name="lastName"
@@ -58,6 +65,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
         />
         <select
           onChange={formHandler}
+          autocomplete="off"
           placeholder="select Class"
           name="selectClass"
           id="selectClass"
@@ -90,6 +98,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
           placeholder="Enter Roll Number in Digits"
           name="rollNo"
           value={rollNo}
+          autocomplete="off"
           maxLength="2"
         />
       </div>
@@ -114,6 +123,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
       <div className="class-details">
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="Landmark"
           name="landmark"
@@ -121,6 +131,7 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
         />
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="City"
           name="city"
@@ -128,11 +139,12 @@ const StudentForm = ({ setStudentDetails, studentDetails, setStudents ,initialSt
         />
         <input
           onChange={formHandler}
+          autocomplete="off"
           type="text"
           placeholder="Pincode"
           name="pincode"
           value={pincode}
-          maxLength='6'
+          maxLength="6"
         />
         <button onClick={submitHandler} className="btn">
           Add Student
